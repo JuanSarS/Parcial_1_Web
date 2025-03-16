@@ -39,7 +39,7 @@ Siga estos pasos para ejecutar el proyecto en su máquina:
 ## Reporte de Decisiones
 Para el desarrollo del parcial se realizó el siguiente proceso: 
 - Se inicializó un repositorio vacío.
-   -    
+   -   Para facilitar el desarrollo del parcial se preparó previamente el ambiente de trabajo. 
 - Se ejcutó React + Vite y se probó.
 - Se realizó el primer Release.
 - A partir de este se emepzó a trabjar en la hora de desarrollo del parcial.
