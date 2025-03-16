@@ -1,6 +1,6 @@
 # Parcial 1 Desarrollo Web 
 ## Juan Diego Sarmiento Sánchez
-### Descripción
+## Descripción
 Este proyecto es una aplicación web desarrollada con React y Vite. Implementa diversas funcionalidades utilizando React Bootstrap, React Router y react-intl para la internacionalización.
 
 ### Instalación y Ejecución
@@ -28,7 +28,7 @@ Sigue estos pasos para ejecutar el proyecto en tu máquina:
    ```sh
    yarn start
    ```
-### Reporte de Decisiones
+## Reporte de Decisiones
 #### Tecnologías y Librerías Utilizadas
 - **React 19**: Para la construcción de componentes reutilizables.
 - **Vite**: Como entorno de desarrollo rápido.
@@ -44,7 +44,7 @@ Sigue estos pasos para ejecutar el proyecto en tu máquina:
 - Se utilizó Bootstrap para mejorar la apariencia y experiencia de usuario.
 - Se implementó navegación dinámica con `react-router-dom`.
 
-### Componentes y Elementos de React Utilizados
+## Componentes y Elementos de React Utilizados
 #### Componentes principales
 - **CarouselImg**: Implementa un carrusel con imágenes usando `react-bootstrap`.
 - **MainApp**: Página principal de la aplicación.
