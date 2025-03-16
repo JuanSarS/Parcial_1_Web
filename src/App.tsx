@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { BrowserRouter, Routes, Route,Navigate } from "react-router-dom";
-import MainView from "./views/MainView";
 import Login from "./Components/Login";
 import MainApp from './Components/MainApp';
 import Detail  from './Components/Detail';

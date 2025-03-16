@@ -6,5 +6,9 @@
     "menu":"Menú",
     "stores":"Tiendas",
     "cart":"Carrito",
-    "error":"Contraseña no válida"
+    "error":"Contraseña no válida",
+    "forgot_password":"¿Olvidó la contraseña?",
+    "back": "Volver",
+    "close":" Cerrar Sesión"
+
 }

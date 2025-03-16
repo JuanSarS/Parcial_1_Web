@@ -1,0 +1,31 @@
+.menu_header {
+    background-color: #0d4f4e; /* Color de fondo similar a la imagen */
+    color: white; /* Texto en blanco */
+    padding: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    height:100%;
+    padding: 0px;
+    justify-content: center;
+    align-items: center;
+}
+.links {
+    color: black;        // Color del texto
+    text-decoration: none;  // Sin subrayado
+    display: inline-block;  // Para centrar mejor si es necesario
+    text-align: center;
+    font-size: 40px;
+    font-weight: normal;  // No resaltar
+    transition: color 0.3s ease-in-out;  // Suaviza cambios de color
+    
+    &:hover {
+      color: rgb(44, 43, 43);  // Mantiene el color negro al pasar el mouse
+      transition: color 0.3s ease-in-out;
+    }
+  }
+  

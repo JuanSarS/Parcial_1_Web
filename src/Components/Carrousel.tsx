@@ -8,15 +8,16 @@ interface Images {
 
 const CarouselImg: FC<Images> = ({images}) =>{
     const [index, setIndex] = useState(0);
-  
-    const handleSelect = (selectedIndex) => {
+    console.log(index)
+    console.log(images,"Imagenes")
+    const handleSelect = (selectedIndex:number) => {
       setIndex(selectedIndex);
     };
   
     return (
-      <Carousel activeIndex={index} onSelect={handleSelect}>
+      <Carousel activeIndex={index} onSelect={handleSelect} variant= "dark">
         {images.map((src,index)=> (
-            <Carousel.Item >
+            <Carousel.Item key={index} >
                 <img
                     src={src}
                     alt={`Slide ${index + 1}`}
@@ -26,13 +27,7 @@ const CarouselImg: FC<Images> = ({images}) =>{
             </Carousel.Item>
         ))}
         
-        <Carousel.Item>
-          
-        </Carousel.Item>
-        <Carousel.Item>
-        
-        </Carousel.Item>
-      </Carousel>
+     </Carousel>
     );
   }
 

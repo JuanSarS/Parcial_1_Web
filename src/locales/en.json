@@ -6,5 +6,10 @@
     "menu":"Menu",
     "stores":"Stores",
     "cart":"Cart",
-    "error":"Password is not valid"
+    "error":"Password is not valid",
+    "forgot_password":"Forgot Password?",
+    "back": "Go back",
+    "close":"Log Out"
+
+
 }

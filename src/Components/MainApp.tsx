@@ -1,56 +1,57 @@
-import { Navigate, useNavigate } from "react-router";
-import { Container, Row ,Col,Card} from 'react-bootstrap';
-import Image from 'react-bootstrap/Image';
-import {IntlProvider} from 'react-intl';
+import { useNavigate,Link } from "react-router";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import Image from "react-bootstrap/Image";
+import { FormattedMessage } from "react-intl";
 import styles from "./MainApp.module.scss";
 import shop from "../assets/shop.png";
 import cart from "../assets/Cart.png";
 import menu from "../assets/menu.png";
+import { useIntl } from 'react-intl';
+const MainApp = () => {
+  const intl= useIntl();
+  const navigate = useNavigate();
 
-import { FormattedMessage } from 'react-intl';
-const MainApp = ()=> {
-    const navigate= useNavigate();
-    const handleClick=(page:string)=>{
-        navigate("/detail",{title:page})
+  const handleClick = (page: string) => {
+    navigate("/detail",{ state: { title: page } });
+  };
 
-    };
-    return (
-        <Container className={styles.main}>
-         <Card>     
-         <Row className= {`d-flex justify-content-center`}>
-            <Col> 
-              <Row>
-              <Image src={menu}/>
-              </Row>
-              <Row>
-                <div onClick={handleClick}>
-                    <FormattedMessage id ="menu"/>
-                </div>
-              </Row>  
-            </Col>
-            <Col> 
-              <Row>
-              <Image src={shop} />
-              </Row>
-              <Row>
-              <FormattedMessage id ="stores"/>
-              </Row>  
-            </Col>
-            <Col> 
-              <Row>
-              <Image src={cart} />
-              </Row>
-              <Row>
-              <FormattedMessage id ="cart"/>
-              </Row>  
-            </Col>
-
-          </Row>  
-          </Card>
-
-        </Container>
-
-    );
-}
+  return (
+    <Container fluid className={styles.main}>
+      <Card className={styles.card}>
+        <Row className="d-flex justify-content-center align-items-center">
+          <Col className="text-center">
+            <div className={styles.iconContainer} onClick={() => handleClick(intl.formatMessage({ id: 'menu' }))}>
+              <Image src={menu} className={styles.icon} />
+              <p className={styles.text}> 
+              <FormattedMessage id="menu"  />
+              </p>
+            </div>
+          </Col>
+          <Col className="text-center">
+            <div className={styles.iconContainer} onClick={() => handleClick(intl.formatMessage({ id: 'stores' }))}>
+              <Image src={shop} className={styles.icon} />
+              <p className={styles.text}> 
+              <FormattedMessage id="stores" />
+              </p>
+            </div>
+          </Col>
+          <Col className="text-center">
+            <div className={styles.iconContainer} onClick={() => handleClick(intl.formatMessage({ id: 'cart' }))}>
+              <Image src={cart} className={styles.icon} />
+              <p className={styles.text}> 
+              <FormattedMessage id="cart"  />
+              </p> 
+            </div>
+          </Col>
+        </Row>
+        <Row className="d-flex justify-content-center align-items-center">
+        <Link to="/" className={styles.links}>
+                    <FormattedMessage id="close"/>
+                </Link>
+        </Row> 
+      </Card>
+    </Container>
+  );
+};
 
 export default MainApp;

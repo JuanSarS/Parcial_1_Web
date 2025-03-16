@@ -1,35 +1,113 @@
 .card {
-    background-color: rgb(3, 73, 11);
+    background-color:#1E3D3A;
     text-align: center;
     overflow: hidden; 
-    
     background-size: cover;
     height: 100vh;
     color: black;
-
-    
+    padding:0;
   }
 .input {
-    background-color: rgb(73, 64, 3);
+    background-color: #1E3D3A;
+    padding: 20px;
+    color: white !important;
+    border-radius: 50px; 
+    transition: 0.3s ease-in-out;
+    width: 100%;
 }
 
+.input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important; /* Color más visible */
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    transition: 0.3s ease-in-out;
+}
+.input:focus::placeholder {
+    color: black !important;
+    font-weight: 700 !important;
+    transition: 0.3s ease-in-out;
+}
+
+.input:focus {
+    color: black !important;
+    font-weight: 700 !important;
+    transition: 0.3s ease-in-out;
+}
+.banner {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+.body{
+    align-items: center;
+  
+    justify-content:center;
+    text-align: center;
+    
+} 
+.alert{
+    border-radius: 50px; 
+
+}
 .container{
-    background-image: url("https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHx8MA%3D%3D");
+    padding: 0px;
     background-size: cover;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+   
 }
 
 .flag {
     height: 1.5rem;
     object-fit: contain;
  }
+ .button {
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: white;
+    transition: 0.3s ease-in-out;
+}
 
+.button:hover {
+    background-color: #1E3D3A;
+    color: white;
+    border-color:  #1E3D3A;
+}
  .button:disabled {
     background-color: #020101; /* Color de fondo gris */
     color: #666; /* Texto en gris oscuro */
     cursor: not-allowed; /* Cursor indicando que no se puede hacer clic */
     opacity: 0.6; /* Hacerlo más transparente */
+    border-color: #020101;
   }
+
+.img{
+    object-fit: contain;
+    height: 40rem;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+.loginbutton{
+   
+    background-color: white;
+    color: black;
+    border-radius: 50px; 
+    transition: 0.3s ease-in-out;
+    width: 100%;
+}
+
+.loginbutton:hover{
+
+    background-color: black;
+    border-color: black;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
