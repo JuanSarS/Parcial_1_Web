@@ -1,14 +1,20 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import { FormattedMessage } from 'react-intl';
+import { useLanguage } from '../context/i18n';
 import {useState} from 'react';
 import Alert from 'react-bootstrap/Alert';
 import Form from 'react-bootstrap/Form';
 import styles from "./Login.module.scss"
 import { useNavigate } from "react-router";
 import { Container, Row ,Col} from 'react-bootstrap';
+import { useIntl } from 'react-intl';
+import co from "../assets/colombiaFLG.svg";
+import uk from "../assets/ukFLG.svg";
 
 const Login = ()=>{
+    const intl = useIntl();
+    const { switchLanguage, locale } = useLanguage();
     const [formValues, setFormvalues]= useState({password:"" , user:""})   
     const [error , setError] = useState("");
     const navigate= useNavigate();
@@ -24,7 +30,7 @@ const Login = ()=>{
               setError("")
               console.log("No error")
            }else {
-              setError("Constraseña no válida")
+              setError(intl.formatMessage({ id: 'error' }))
               console.log("Error")
            };
     });
@@ -42,12 +48,33 @@ const Login = ()=>{
         
            </Col> 
            <Col className="bg-white p-8 rounded shadow-md w-96">
+             
+              
               <Card className={styles.card} >
+              <div className="d-flex justify-content-end gap-2">
+              <Button
+                        variant={"light"}
+                        onClick={() => switchLanguage('es')}
+                        className={`me-2 ${styles.button}`}
+                        disabled={locale === "es"}
+                        >
+               <img src={co} className={styles.flag} alt="español" />
+               </Button>  
+              
+               <Button
+                        variant={"light"}
+                        onClick={() => switchLanguage('en')}
+                        className={`me-2 ${styles.button}`}
+                        disabled={locale === "en"}
+                        >
+               <img src={uk} className={styles.flag} alt="english" />
+               </Button> 
+               </div>
                  <Card.Body >
-                    <Card.Title>Log in</Card.Title>
+                    <Card.Title><FormattedMessage id="login"/></Card.Title>
                        <Form onSubmit= {handleLogin}>   
                        <Form.Group>
-                             <Form.Label >Usuario</Form.Label>
+                             <Form.Label ><FormattedMessage id="username"/></Form.Label>
                              <Form.Control  className= {styles.input} 
                                 type="user"
                                 required  
@@ -57,7 +84,7 @@ const Login = ()=>{
                        </Form.Group>
   
                        <Form.Group>
-                             <Form.Label>Contraseña</Form.Label>
+                             <Form.Label><FormattedMessage id="password"/></Form.Label>
                              <Form.Control  className= {styles.input} 
                                 type="password"
                                 required  
@@ -67,7 +94,7 @@ const Login = ()=>{
                              {error && <Alert variant="danger" key={error}>{error}</Alert>}
                        </Form.Group>
   
-                       <Button className="mt-2" type="submit">Log In</Button>
+                       <Button className="mt-2" type="submit"><FormattedMessage id="login"/></Button>
                        </Form>
                  </Card.Body>
            </Card>

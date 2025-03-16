@@ -21,3 +21,15 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.flag {
+    height: 1.5rem;
+    object-fit: contain;
+ }
+
+ .button:disabled {
+    background-color: #020101; /* Color de fondo gris */
+    color: #666; /* Texto en gris oscuro */
+    cursor: not-allowed; /* Cursor indicando que no se puede hacer clic */
+    opacity: 0.6; /* Hacerlo más transparente */
+  }

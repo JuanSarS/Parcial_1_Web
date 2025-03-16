@@ -1,14 +1,14 @@
 import { Navigate, useNavigate } from "react-router";
 import { Container, Row ,Col,Card} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image';
+import {IntlProvider} from 'react-intl';
+import styles from "./MainApp.module.scss";
+import shop from "../assets/shop.png";
+import cart from "../assets/Cart.png";
+import menu from "../assets/menu.png";
 
-import styles from "./MainApp.module.scss"
-
-
+import { FormattedMessage } from 'react-intl';
 const MainApp = ()=> {
-    const menu = "../assets/Menu.png";
-    const cart = "../assets/Cart.png";
-    const shop = "../assets/shop.png";
     const navigate= useNavigate();
     const handleClick=(page:string)=>{
         navigate("/detail",{title:page})
@@ -20,11 +20,11 @@ const MainApp = ()=> {
          <Row className= {`d-flex justify-content-center`}>
             <Col> 
               <Row>
-              <Image src={shop}/>
+              <Image src={menu}/>
               </Row>
               <Row>
                 <div onClick={handleClick}>
-                    shop
+                    <FormattedMessage id ="menu"/>
                 </div>
               </Row>  
             </Col>
@@ -33,15 +33,15 @@ const MainApp = ()=> {
               <Image src={shop} />
               </Row>
               <Row>
-                Shop
+              <FormattedMessage id ="stores"/>
               </Row>  
             </Col>
             <Col> 
               <Row>
-              <Image src={shop} />
+              <Image src={cart} />
               </Row>
               <Row>
-                Shop
+              <FormattedMessage id ="cart"/>
               </Row>  
             </Col>
 
